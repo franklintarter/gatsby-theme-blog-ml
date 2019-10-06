@@ -3,14 +3,14 @@ import { graphql, Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Image from "gatsby-image";
 import { MDXProvider } from "@mdx-js/react";
-import { Layout } from "../components";
+import { Layout, ImageCaption } from "../components";
 import { useTags } from "../hooks";
 
 export default ({ data }) => {
   const { blogPost, next, previous } = data;
   const { mdx } = blogPost;
   const { body, frontmatter } = mdx;
-  const { title, date, tags, featuredImage } = frontmatter;
+  const { title, date, tags, featuredImage, featuredImageCaption, featuredImageUrl } = frontmatter;
   const postTags = useTags({ tags });
   const tagElements = postTags.map(t => (
     <li key={t.name}>
@@ -23,6 +23,7 @@ export default ({ data }) => {
       <h1>{title}</h1>
       <p>{date}</p>
       <Image fluid={featuredImage.childImageSharp.fluid} />
+      <ImageCaption caption={featuredImageCaption} url={featuredImageUrl} /> 
       <MDXProvider>
         <MDXRenderer>{body}</MDXRenderer>
       </MDXProvider>
@@ -52,6 +53,8 @@ export const query = graphql`
           slug
           title
           tags
+          featuredImageCaption
+          featuredImageUrl
           featuredImage {
             childImageSharp {
               fluid(maxWidth: 700, quality: 100) {
