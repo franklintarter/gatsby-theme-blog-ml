@@ -22,7 +22,7 @@ export default ({ data }) => {
     <Layout>
       <h1>{title}</h1>
       <p>{date}</p>
-      <Image fluid={featuredImage.childImageSharp.fluid} />
+      <Image fluid={featuredImage.childImageSharp.fluid} style={{ marginBottom: '1rem'}} />
       <ImageCaption caption={featuredImageCaption} url={featuredImageUrl} /> 
       <MDXProvider>
         <MDXRenderer>{body}</MDXRenderer>
