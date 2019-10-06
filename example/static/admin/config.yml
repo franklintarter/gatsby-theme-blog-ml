@@ -1,0 +1,24 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: example/static/images
+public_folder: /images
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    format: frontmatter
+    editor: { preview: false }
+    folder: "example/static/posts"
+    # media_folder_relative: true
+    create: true
+    extension: mdx
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Url", name: "slug", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "featuredImage", widget: image }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
