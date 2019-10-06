@@ -3,6 +3,6 @@
 Run Example
 
 ```shell
-yarne
+yarn
 yarn workspace example develop
 ```
