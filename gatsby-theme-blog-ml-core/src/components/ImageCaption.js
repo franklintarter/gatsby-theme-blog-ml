@@ -31,6 +31,6 @@ export default ({ caption, url }) => {
     );
   }
   return (
-    <div style={{ textAlign: "center", padding: "1rem" }}>{captionElement}</div>
+    <div style={{ textAlign: "center", padding: "0.75rem 1rem 1.25rem" }}>{captionElement}</div>
   );
 };
