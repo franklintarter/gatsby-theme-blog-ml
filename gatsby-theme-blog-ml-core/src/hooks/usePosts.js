@@ -39,7 +39,7 @@ const usePosts = ({ tag = null } = {}) => {
 
   const posts = allBlogPost.edges.map(e => e.node);
 
-  if (tag !== null) {
+  if (tag) {
     return posts
       .filter(p => p.mdx.frontmatter.tags !== null)
       .filter(p => p.mdx.frontmatter.tags.includes(tag));
