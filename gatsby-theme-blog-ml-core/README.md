@@ -34,11 +34,11 @@ plugins[
 
 ### NetlifyCMS
 
-Check out [static/admin/config.yml](../example/static/admin/config.yml) to see an example NetlifyCMS setup that works with the theme default values.
+Check out [static/admin/config.yml](https://github.com/franklintarter/gatsby-theme-blog-ml/tree/master/example) to see an example NetlifyCMS setup that works with the theme default values.
 
 ### Component Shadowing
 
-The components and pages are unstyled by design and meant to be shadowed. Check out the [src](./src) directory to shadow any of the pages/components/templates the theme provides.
+The components and pages are unstyled by design and meant to be shadowed. Check out the [src](https://github.com/franklintarter/gatsby-theme-blog-ml/tree/master/gatsby-theme-blog-ml-core/src) directory to shadow any of the pages/components/templates the theme provides.
 
 ```txt:title="gatsby-theme-blog-ml-core"
 src
@@ -59,7 +59,7 @@ src
 
 ### Example
 
-See [example project](../example/README.md) for full usage example.
+See [example project](https://github.com/franklintarter/gatsby-theme-blog-ml/tree/master/example) for full usage example.
 
 ## Contribute
 
