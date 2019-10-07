@@ -21,6 +21,13 @@ const usePosts = ({ tag = null } = {}) => {
                   title
                   tags
                   date(formatString: "MMMM DD, YYYY")
+                  featuredImage {
+                    childImageSharp {
+                      fluid(maxWidth: 720, quality: 100) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
                 }
               }
             }
