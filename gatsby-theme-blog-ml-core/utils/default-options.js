@@ -1,6 +1,6 @@
 module.exports = themeOptions => {
-  const contentPath = themeOptions.contentPath || `static/posts`;
-  const assetPath = themeOptions.assetPath || `static/images`;
+  const contentPath = themeOptions.contentPath || `content/posts`;
+  const assetPath = themeOptions.assetPath || `static/uploads`;
 
   return {
     contentPath,
