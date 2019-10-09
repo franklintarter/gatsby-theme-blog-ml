@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby";
 
-const usePosts = ({ tag = null } = {}) => {
+const usePosts = ({ tag = null, excludeSlugs = [] } = {}) => {
   const { allBlogPost } = useStaticQuery(
     graphql`
       query PostsFeedQuery {
@@ -37,13 +37,16 @@ const usePosts = ({ tag = null } = {}) => {
     `
   );
 
-  const posts = allBlogPost.edges.map(e => e.node);
+  const posts = allBlogPost.edges
+    .map(e => e.node)
+    .filter(p => !excludeSlugs.includes(p.mdx.frontmatter.slug));
 
   if (tag) {
     return posts
       .filter(p => p.mdx.frontmatter.tags !== null)
       .filter(p => p.mdx.frontmatter.tags.includes(tag));
   }
+
   return posts;
 };
 
