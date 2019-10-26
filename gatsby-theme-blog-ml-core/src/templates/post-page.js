@@ -50,7 +50,6 @@ export const query = graphql`
         excerpt
         body
         frontmatter {
-          excerpt
           slug
           title
           tags
