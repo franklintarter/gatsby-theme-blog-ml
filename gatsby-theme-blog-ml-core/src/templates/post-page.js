@@ -57,6 +57,7 @@ export const query = graphql`
                  slug
                  title
                  tags
+                 keywords
                  featuredImageCaption
                  featuredImageUrl
                  featuredImage {
