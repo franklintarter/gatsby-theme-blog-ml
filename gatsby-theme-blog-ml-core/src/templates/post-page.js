@@ -43,50 +43,55 @@ export default ({ data }) => {
 };
 
 export const query = graphql`
-  query PostPageQuery($id: String!, $previousId: String, $nextId: String) {
-    blogPost(id: { eq: $id }) {
-      id
-      mdx {
-        excerpt
-        body
-        frontmatter {
-          slug
-          title
-          tags
-          featuredImageCaption
-          featuredImageUrl
-          featuredImage {
-            childImageSharp {
-              fluid(maxWidth: 1100, quality: 88) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          date(formatString: "MMMM DD, YYYY")
-        }
-      }
-    }
-    previous: blogPost(id: { eq: $previousId }) {
-      id
-      mdx {
-        excerpt
-        frontmatter {
-          slug
-          title
-          date(formatString: "MMMM DD, YYYY")
-        }
-      }
-    }
-    next: blogPost(id: { eq: $nextId }) {
-      id
-      mdx {
-        excerpt
-        frontmatter {
-          slug
-          title
-          date(formatString: "MMMM DD, YYYY")
-        }
-      }
-    }
-  }
-`;
+         query PostPageQuery(
+           $id: String!
+           $previousId: String
+           $nextId: String
+         ) {
+           blogPost(id: { eq: $id }) {
+             id
+             mdx {
+               excerpt
+               body
+               frontmatter {
+                 slug
+                 title
+                 tags
+                 featuredImageCaption
+                 featuredImageUrl
+                 featuredImage {
+                   publicURL
+                   childImageSharp {
+                     fluid(maxWidth: 1100, quality: 88) {
+                       ...GatsbyImageSharpFluid
+                     }
+                   }
+                 }
+                 date(formatString: "MMMM DD, YYYY")
+               }
+             }
+           }
+           previous: blogPost(id: { eq: $previousId }) {
+             id
+             mdx {
+               excerpt
+               frontmatter {
+                 slug
+                 title
+                 date(formatString: "MMMM DD, YYYY")
+               }
+             }
+           }
+           next: blogPost(id: { eq: $nextId }) {
+             id
+             mdx {
+               excerpt
+               frontmatter {
+                 slug
+                 title
+                 date(formatString: "MMMM DD, YYYY")
+               }
+             }
+           }
+         }
+       `;
