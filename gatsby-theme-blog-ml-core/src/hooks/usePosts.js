@@ -23,7 +23,7 @@ const usePosts = ({ tag = null, excludeSlugs = [] } = {}) => {
                   date(formatString: "MMMM DD, YYYY")
                   featuredImage {
                     childImageSharp {
-                      fluid(maxWidth: 720, quality: 88) {
+                      fluid(maxWidth: 720, quality: 65) {
                         ...GatsbyImageSharpFluid
                       }
                     }
