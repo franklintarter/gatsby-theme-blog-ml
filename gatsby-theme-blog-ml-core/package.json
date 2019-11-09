@@ -9,6 +9,13 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "gatsby-theme",
+    "gatsby-blog",
+    "react"
+  ],
   "dependencies": {
     "@mdx-js/mdx": "^1.4.5",
     "gatsby-image": "^2.2.24",
